@@ -8,6 +8,10 @@ class Program
         Kerrigan kerrigan = new Kerrigan();
 
         MoveAndLauncherNuclear(kerrigan);
+        
+        // 다른 클래스에도 kerrigan을 매개변수로 전달하여야 함
+        KerriganUpgrader upgrader = new KerriganUpgrader(kerrigan);
+        upgrader.UpgradeWeapon();
     }
 
     // 매 함수마다 kerrigan을 매개변수로 전달하여야 함
@@ -28,5 +32,20 @@ class Program
     private static void LauncherNuclear(Kerrigan kerrigan)
     {
         kerrigan.LaunchNuclear();
+    }
+}
+
+public class KerriganUpgrader
+{
+    private Kerrigan _kerrigan;
+
+    public KerriganUpgrader(Kerrigan kerrigan)
+    {
+        _kerrigan = kerrigan;
+    }
+
+    public void UpgradeWeapon()
+    {
+        _kerrigan.Weapon++;
     }
 }
