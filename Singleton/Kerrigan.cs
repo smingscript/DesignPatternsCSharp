@@ -1,6 +1,6 @@
 using System;
 
-public class Kerrigan
+public class Kerrigan : Ghost
 {
     #region singleton
     private static Kerrigan _instance;
@@ -17,7 +17,6 @@ public class Kerrigan
 
     private Kerrigan()
     {
-        Weapon = 1;
     }
     #endregion
 
@@ -31,5 +30,9 @@ public class Kerrigan
         Console.WriteLine($"to ({x}, {y})");
     }
 
-    public int Weapon { get; set; }
+    public override int Weapon
+    {
+        get { return base.Weapon;}
+        set { base.Weapon = value * 2; }
+    }
 }

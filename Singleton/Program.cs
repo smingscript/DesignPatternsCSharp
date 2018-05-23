@@ -11,6 +11,8 @@ class Program
         // 다른 클래스에 kerrigan을 전달할 필요 없음
         KerriganUpgrader upgrader = new KerriganUpgrader();
         upgrader.UpgradeWeapon();
+
+        Console.WriteLine(Kerrigan.Instance.Weapon);
     }
 
     // kerrigan을 매개변수로 전달할 필요 없음
