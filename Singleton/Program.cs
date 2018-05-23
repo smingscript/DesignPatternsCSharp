@@ -2,15 +2,14 @@
 
 class Program
 {
-    // kerrigan을 멤버변수로 생성
-    private static Kerrigan _kerrigan = new Kerrigan();
+    // kerrigan을 생성할 필요 없음
 
     static void Main(string[] args)
     {
         MoveAndLauncherNuclear();
         
-        // 다른 클래스에는 kerrigan을 매개변수로 전달하여야 함
-        KerriganUpgrader upgrader = new KerriganUpgrader(_kerrigan);
+        // 다른 클래스에 kerrigan을 전달할 필요 없음
+        KerriganUpgrader upgrader = new KerriganUpgrader();
         upgrader.UpgradeWeapon();
     }
 
@@ -28,27 +27,24 @@ class Program
     // kerrigan을 매개변수로 전달할 필요 없음
     private static void Move()
     {
-        _kerrigan.Move(1, 2);
+        Kerrigan.Instance.Move(1, 2);
     }
 
     // kerrigan을 매개변수로 전달할 필요 없음
     private static void LauncherNuclear()
     {
-        _kerrigan.LaunchNuclear();
+        Kerrigan.Instance.LaunchNuclear();
     }
 }
 
 public class KerriganUpgrader
 {
-    private Kerrigan _kerrigan;
-
-    public KerriganUpgrader(Kerrigan kerrigan)
+    public KerriganUpgrader()
     {
-        _kerrigan = kerrigan;
     }
 
     public void UpgradeWeapon()
     {
-        _kerrigan.Weapon++;
+        Kerrigan.Instance.Weapon++;
     }
 }

@@ -2,10 +2,24 @@ using System;
 
 public class Kerrigan
 {
-    public Kerrigan()
+    #region singleton
+    private static Kerrigan _instance;
+
+    public static Kerrigan Instance
+    {
+        get
+        {
+            if (_instance == null)
+                _instance = new Kerrigan();
+            return _instance;
+        }
+    }
+
+    private Kerrigan()
     {
         Weapon = 1;
     }
+    #endregion
 
     public void LaunchNuclear()
     {
