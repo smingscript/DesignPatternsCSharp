@@ -1,4 +1,5 @@
 ﻿using System;
+using AdapterPattern.Library;
 
 namespace AdapterPattern
 {
@@ -6,7 +7,23 @@ namespace AdapterPattern
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Marine marine = new Marine();
+            MakeItFast(marine);
+            Console.WriteLine(marine.Speed);
+            
+            Zealot zealot = new Zealot();
+            MakeItFast(zealot);
+            Console.WriteLine(zealot.Speed);
+        }
+
+        private static void MakeItFast(Marine marine)
+        {
+            marine.RunSteamPack();
+        }
+
+        private static void MakeItFast(Zealot zealot)
+        {
+            zealot.Charge();
         }
     }
 }
