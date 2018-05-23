@@ -2,36 +2,39 @@
 
 class Program
 {
+    // kerrigan을 멤버변수로 생성
+    private static Kerrigan _kerrigan = new Kerrigan();
+
     static void Main(string[] args)
     {
-        // kerrigan을 지역변수로 생성
-        Kerrigan kerrigan = new Kerrigan();
-
-        MoveAndLauncherNuclear(kerrigan);
+        MoveAndLauncherNuclear();
         
-        // 다른 클래스에도 kerrigan을 매개변수로 전달하여야 함
-        KerriganUpgrader upgrader = new KerriganUpgrader(kerrigan);
+        // 다른 클래스에는 kerrigan을 매개변수로 전달하여야 함
+        KerriganUpgrader upgrader = new KerriganUpgrader(_kerrigan);
         upgrader.UpgradeWeapon();
     }
 
-    // 매 함수마다 kerrigan을 매개변수로 전달하여야 함
-    private static void MoveAndLauncherNuclear(Kerrigan kerrigan)
+    // kerrigan을 매개변수로 전달할 필요 없음
+    private static void MoveAndLauncherNuclear()
     {
-        Move(kerrigan);
-        LauncherNuclear(kerrigan);
-        LauncherNuclear(kerrigan);
+        Move();
+        LauncherNuclear();
+        LauncherNuclear();
+        
+        // 멤버변수는 접근이 용이하기 때문에 실수로 핵을 발사할 수 있음
+        // _kerrigan.LaunchNuclear();
     }
 
-    // 매 함수마다 kerrigan을 매개변수로 전달하여야 함
-    private static void Move(Kerrigan kerrigan)
+    // kerrigan을 매개변수로 전달할 필요 없음
+    private static void Move()
     {
-        kerrigan.Move(1, 2);
+        _kerrigan.Move(1, 2);
     }
 
-    // 매 함수마다 kerrigan을 매개변수로 전달하여야 함
-    private static void LauncherNuclear(Kerrigan kerrigan)
+    // kerrigan을 매개변수로 전달할 필요 없음
+    private static void LauncherNuclear()
     {
-        kerrigan.LaunchNuclear();
+        _kerrigan.LaunchNuclear();
     }
 }
 
