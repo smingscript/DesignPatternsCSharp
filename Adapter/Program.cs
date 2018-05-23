@@ -5,21 +5,16 @@ class Program
     static void Main(string[] args)
     {
         Marine marine = new Marine();
-        MakeItFast(marine);
+        MakeItFast(new MarineAdapter(marine));
         Console.WriteLine(marine.Speed);
 
         Zealot zealot = new Zealot();
-        MakeItFast(zealot);
+        MakeItFast(new ZealotAdapter(zealot));
         Console.WriteLine(zealot.Speed);
     }
 
-    private static void MakeItFast(Marine marine)
+    private static void MakeItFast(ISpeedAdapter adapter)
     {
-        marine.RunSteamPack();
-    }
-
-    private static void MakeItFast(Zealot zealot)
-    {
-        zealot.Charge();
+        adapter.SpeedUp();
     }
 }
