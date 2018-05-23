@@ -1,5 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{425B94A0-3EC4-432C-B3BD-6C99E0F494EB}"
+ProjectSection(SolutionItems) = preProject
+	C# 디자인 패턴.docx = C# 디자인 패턴.docx
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
