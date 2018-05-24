@@ -12,7 +12,7 @@ namespace Iterator
 
             MarinePair pair = new MarinePair(m3, m1);
             IterateMarines(pair);
-            
+
             MarineList list = new MarineList(m1, m2, m3);
             IterateMarines(list);
         }
@@ -20,11 +20,14 @@ namespace Iterator
         // MarinePair와 MarineList가 동일한 방법으로 각각 포함하고 있는 마린을 순회하여야 함
         private static void IterateMarines(IIteratable marines)
         {
+//            foreach (Marine marine in marines)
+//                Console.WriteLine(marine.Name);
+            
             IIterator iterator = marines.Iterator;
 
             while (iterator.HasNext())
             {
-                Marine marine = iterator.Next();
+                Marine marine = iterator.GetCurrent();
                 Console.WriteLine(marine.Name);
             }
         }
