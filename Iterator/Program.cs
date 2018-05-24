@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Iterator
 {
@@ -18,16 +19,16 @@ namespace Iterator
         }
 
         // MarinePair와 MarineList가 동일한 방법으로 각각 포함하고 있는 마린을 순회하여야 함
-        private static void IterateMarines(IIteratable marines)
+        private static void IterateMarines(IEnumerable<Marine> marines)
         {
 //            foreach (Marine marine in marines)
 //                Console.WriteLine(marine.Name);
-            
-            IIterator iterator = marines.Iterator;
 
-            while (iterator.HasNext())
+            IEnumerator<Marine> iterator = marines.GetEnumerator();
+
+            while (iterator.MoveNext())
             {
-                Marine marine = iterator.GetCurrent();
+                Marine marine = iterator.Current;
                 Console.WriteLine(marine.Name);
             }
         }

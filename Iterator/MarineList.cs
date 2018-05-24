@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 
-public class MarineList : IIteratable
+public class MarineList : IEnumerable<Marine>
 {
     public MarineList(params Marine[] marines)
     {
@@ -11,48 +12,15 @@ public class MarineList : IIteratable
     }
     
     private List<Marine> _marines = new List<Marine>();
-
-    public IIterator Iterator
+    
+    public IEnumerator<Marine> GetEnumerator()
     {
-        get {return new MarineIterator(this);}
+        foreach (Marine marine in _marines)
+            yield return marine;
     }
 
-    public int Size
+    IEnumerator IEnumerable.GetEnumerator()
     {
-        get { return _marines.Count; }
-    }
-
-    public Marine Get(int index)
-    {
-        return _marines[index];
-    }
-
-    // indexer
-    public Marine this[int index]
-    {
-        get { return _marines[index]; }
-    }
-
-    public class MarineIterator : IIterator
-    {
-        private MarineList _list;
-
-        public MarineIterator(MarineList list)
-        {
-            _list = list;
-        }
-
-        private int _index;
-        
-        public bool HasNext()
-        {
-            return _index < _list.Size;
-        }
-
-        public Marine GetCurrent()
-        {
-//            return _list.Get(_index);
-            return _list[_index++];
-        }
+        return GetEnumerator();
     }
 }

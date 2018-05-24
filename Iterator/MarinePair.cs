@@ -1,4 +1,7 @@
-﻿public class MarinePair : IIteratable
+﻿using System.Collections;
+using System.Collections.Generic;
+
+public class MarinePair : IEnumerable<Marine>
 {
     public MarinePair(Marine first, Marine second)
     {
@@ -10,41 +13,15 @@
 
     public Marine Second { get; private set; }
 
-    public IIterator Iterator
+    public IEnumerator<Marine> GetEnumerator()
     {
-        get {return new MarineIterator(this);}
+        yield return First;
+        yield return Second;
     }
-    
-    public class MarineIterator : IIterator
+
+    IEnumerator IEnumerable.GetEnumerator()
     {
-        private MarinePair _pair;
-
-        public MarineIterator(MarinePair pair)
-        {
-            _pair = pair;
-        }
-
-        private int _index = 1;
-
-        public bool HasNext()
-        {
-            return _index <= 2;
-        }
-
-        public Marine GetCurrent()
-        {
-            switch (_index)
-            {
-                case 1:
-                    _index++;
-                    return _pair.First;
-                case 2:
-                    _index++;
-                    return _pair.Second;
-                default:
-                    return null;
-            }
-        }
-    }    
+        return GetEnumerator();
+    }
 }
 
