@@ -20,7 +20,13 @@ namespace Iterator
         // MarinePair와 MarineList가 동일한 방법으로 각각 포함하고 있는 마린을 순회하여야 함
         private static void IterateMarines(IIteratable marines)
         {
-            
+            IIterator iterator = marines.Iterator;
+
+            while (iterator.HasNext())
+            {
+                Marine marine = iterator.Next();
+                Console.WriteLine(marine.Name);
+            }
         }
     }
 }
