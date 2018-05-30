@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iterator", "Iterator\Iterat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prefab", "Prefab\Prefab.csproj", "{AD3C075E-2C2D-4A7D-8460-E542836DA2A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite", "Composite\Composite.csproj", "{9ABACB39-71A8-4A91-8B21-EA8BC39A8E55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,5 +49,9 @@ Global
 		{AD3C075E-2C2D-4A7D-8460-E542836DA2A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD3C075E-2C2D-4A7D-8460-E542836DA2A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD3C075E-2C2D-4A7D-8460-E542836DA2A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ABACB39-71A8-4A91-8B21-EA8BC39A8E55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ABACB39-71A8-4A91-8B21-EA8BC39A8E55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ABACB39-71A8-4A91-8B21-EA8BC39A8E55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ABACB39-71A8-4A91-8B21-EA8BC39A8E55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
