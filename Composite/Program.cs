@@ -16,6 +16,15 @@ namespace Composite
             Console.WriteLine(m1);
             Console.WriteLine(f1);
             Console.WriteLine(m2);
+
+
+            Firebat f2 = new Firebat();
+            f2.AddUnits(m2);
+            f2.Move(9, 7);
+            Console.WriteLine(f2);
+            Console.WriteLine(m1);
+            Console.WriteLine(f1);
+            Console.WriteLine(m2);
         }
     }
 }

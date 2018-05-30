@@ -1,10 +1,5 @@
-public class Firebat
+using Composite;
+
+public class Firebat : Unit
 {
-    public int X { get; private set; }
-    public int Y { get; private set; }    
-    
-    public override string ToString()
-    {
-        return $"{X},{Y}";
-    }
 }
