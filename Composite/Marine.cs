@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using Composite;
-
-public class Marine : Unit
+﻿public class Marine : Unit
 {
 
 }

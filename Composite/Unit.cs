@@ -1,45 +1,35 @@
-﻿using System;
+﻿#region
 using System.Collections.Generic;
-using System.Text;
+#endregion
 
-namespace Composite
+public class Unit
 {
-    public class Unit
+    public int X { get; private set; }
+    public int Y { get; private set; }
+
+    public override string ToString()
     {
-        public int X { get; private set; }
-        public int Y { get; private set; }
+        return $"[{X}, {Y}]";
+    }
 
-        public override string ToString()
-        {
-            return $"[{X}, {Y}]";
-        }
+    public void Move(int x, int y)
+    {
+        X = x;
+        Y = y;
 
-        public void Move(int x, int y)
+        foreach (var unit in _units)
         {
-         
-            X = x;
-            Y = y;
-            foreach (var unit in units)
-            {
-                unit.Move(x, y);
-            }
+            unit.Move(x, y);
         }
+    }
 
-        List<Unit> units = new List<Unit>();
+    readonly List<Unit> _units = new List<Unit>();
 
-        public void AddUnits(Marine marine)
-        {
-            units.Add(marine);
-        }
-        public void AddUnits(Firebat firebat)
-        {
-            units.Add(firebat);
-        }
-        public void AddUnits(Marine marine, Firebat firebat)
-        {
-            units.Add(marine);
-            units.Add(firebat);
-            
-        }
+    public void AddUnits(params Unit[] units)
+    {
+//            foreach (var unit in units)
+//                _units.Add(unit);
+
+        _units.AddRange(units);
     }
 }
