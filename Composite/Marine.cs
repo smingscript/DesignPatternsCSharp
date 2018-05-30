@@ -7,4 +7,10 @@
     {
         return $"{X},{Y}";
     }
+
+    public void Move(int x, int y)
+    {
+        X = x;
+        Y = y;
+    }
 }
