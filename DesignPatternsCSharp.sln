@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prefab", "Prefab\Prefab.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite", "Composite\Composite.csproj", "{9ABACB39-71A8-4A91-8B21-EA8BC39A8E55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Builder", "Builder\Builder.csproj", "{B47EC070-8861-4577-9475-860854FD6750}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,5 +55,9 @@ Global
 		{9ABACB39-71A8-4A91-8B21-EA8BC39A8E55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9ABACB39-71A8-4A91-8B21-EA8BC39A8E55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9ABACB39-71A8-4A91-8B21-EA8BC39A8E55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B47EC070-8861-4577-9475-860854FD6750}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B47EC070-8861-4577-9475-860854FD6750}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B47EC070-8861-4577-9475-860854FD6750}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B47EC070-8861-4577-9475-860854FD6750}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
