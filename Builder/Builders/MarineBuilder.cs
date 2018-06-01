@@ -1,16 +1,13 @@
-﻿namespace Builder.Builders
+﻿public class MarineBuilder : Builder
 {
-    public class MarineBuilder : Builder
+    public override void SetHP()
     {
-        public override void SetHP()
-        {
-            _unit.HP = 50;
-        }
+        _unit.HP = 50;
+    }
 
-        public override void SetAttributes()
-        {
-            _unit.CanAttack = true;
-            _unit.CanFly = false;
-        }
+    public override void SetAttributes()
+    {
+        _unit.CanAttack = true;
+        _unit.CanFly = false;
     }
 }

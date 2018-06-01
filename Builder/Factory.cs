@@ -1,33 +1,30 @@
 ﻿#region
 using System;
-using Builder.Builders;
 #endregion
 
-namespace Builder
+public class Factory
 {
-    public class Factory
+    private static Random _random = new Random();
+
+    private static Unit CreateCore(Builder builder)
     {
-        private static Random _random = new Random();
+        builder.SetHP();
+        builder.SetAttributes();
 
-        private static Unit CreateCore(Builders.Builder builder)
+        return builder.Unit;
+    }
+
+    public static Unit Create(UnitType unitType)
+    {
+        switch (unitType)
         {
-            builder.SetHP();
-            builder.SetAttributes();
-
-            return builder.Unit;
+            case UnitType.Marine:
+                return CreateCore(new MarineBuilder());
+            case UnitType.Hydralisk:
+                return CreateCore(new HydraliskBuilder());
+            default:
+                throw new NotImplementedException("Factory.Create");
         }
-
-        public static Unit Create(UnitType unitType)
-        {
-            switch (unitType)
-            {
-                case UnitType.Marine:
-                    return CreateCore(new MarineBuilder());
-                case UnitType.Hydralisk:
-                    return CreateCore(new HydraliskBuilder());
-                default:
-                    throw new NotImplementedException("Factory.Create");
-            }
 
 // 구린 코드 (bad smell code)
 //            Unit unit = new Unit();
@@ -47,12 +44,11 @@ namespace Builder
 //            
 //
 //            return unit;
-        }
     }
+}
 
-    public enum UnitType
-    {
-        Marine,
-        Hydralisk
-    }
+public enum UnitType
+{
+    Marine,
+    Hydralisk
 }

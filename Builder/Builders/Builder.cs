@@ -1,16 +1,13 @@
-﻿namespace Builder.Builders
+﻿public abstract class Builder
 {
-    public abstract class Builder
+    protected Unit _unit = new Unit();
+
+    public Unit Unit
     {
-        protected Unit _unit = new Unit();
-
-        public Unit Unit
-        {
-            get { return _unit; }
-        }
-
-        public abstract void SetHP();
-
-        public abstract void SetAttributes();
+        get { return _unit; }
     }
+
+    public abstract void SetHP();
+
+    public abstract void SetAttributes();
 }
