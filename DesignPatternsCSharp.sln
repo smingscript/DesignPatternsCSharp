@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite", "Composite\Comp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Builder", "Builder\Builder.csproj", "{B47EC070-8861-4577-9475-860854FD6750}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMethod", "TemplateMethod\TemplateMethod.csproj", "{047F513F-B5AE-4F03-868A-10D69BEBDDC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMethod2", "TemplateMethod2\TemplateMethod2.csproj", "{B6B3440A-0D1E-4156-916C-0374E0B560D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,5 +63,13 @@ Global
 		{B47EC070-8861-4577-9475-860854FD6750}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B47EC070-8861-4577-9475-860854FD6750}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B47EC070-8861-4577-9475-860854FD6750}.Release|Any CPU.Build.0 = Release|Any CPU
+		{047F513F-B5AE-4F03-868A-10D69BEBDDC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{047F513F-B5AE-4F03-868A-10D69BEBDDC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{047F513F-B5AE-4F03-868A-10D69BEBDDC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{047F513F-B5AE-4F03-868A-10D69BEBDDC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6B3440A-0D1E-4156-916C-0374E0B560D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6B3440A-0D1E-4156-916C-0374E0B560D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6B3440A-0D1E-4156-916C-0374E0B560D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6B3440A-0D1E-4156-916C-0374E0B560D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
